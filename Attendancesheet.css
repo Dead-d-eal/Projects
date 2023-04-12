@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.studentdata{
+    width: 100%;
+    background-color: cyan;
+    padding: 15px;
+
+}
+#form1{
+    margin: auto;
+    width: 80%;
+    padding: auto;
+    
+}
+#form1 select{
+    padding:0 15px ;
+    margin-right: 15px;
+    display: inline-block;
+    border: 1px solid #de5656;
+    box-sizing: border-box;
+    border-radius: 5px;
+    height: 40px;
+    
+}
+#form1 label:focus{
+    outline: none;
+}
+#form1 input{
+    padding: 10px;
+    background-color: #fff;
+    border: none;
+}
+table{
+        border-collapse: separate;
+        width: 100%;
+        margin: auto;
+        margin-top: 20px;
+        text-align: center;
+}
+.tr1{
+    background-color: rgb(237, 145, 25);
+    color: #fff;
+}

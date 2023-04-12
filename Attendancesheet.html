@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Sheet</title>
+    <link rel="stylesheet" href="Attendancesheet.css">
+</head>
+<body>
+    <div class="studentdata">
+        <form action="" id="form1">&nbsp;
+            <Label for="Branch">Branch:</Label>
+            <select id="parent_select"><option>SELECT ONE</option></select>
+            &nbsp;&nbsp;
+            <Label for="Semestar">Semestar:</Label>
+            <select id="child_select"><option value="Choose">SELECT ONE</option></select>&nbsp;&nbsp;
+            <Label for="Subject">Subject:</Label>
+            <select id="child2_select"><option value="Choose">SELECT ONE</option></select>
+            &nbsp;&nbsp;
+            <label for="DATE">Date:</label>
+            <input type="date" placeholder="DATE" id="DATE" required>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="Submit" onclick="myFunction()" value="Submit">
+        </form>
+    </div>
+    <div class="card-body">
+        <table>
+            <tr class="tr1">
+                <td>No</td>
+                <td>Name</td>
+                <td>Roll no</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        function myFunction(){
+            document.getElementById("form1").submit();
+        }
+    </script>
+    <script language="javascript" type="text/javascript">  
+        var mList = {
+            CSE : ['First','Second','Third','Forth','Fifth','Sixth','Seventh','Eighth'],
+            ENTC: ['FIRST','SECOND','THIRD','FORTH','FIFTH','SIXTH','SEVENTH','EIGHTH'],
+            CIVIL :  ['One','Two','Three','Four','Five','Six','Seven','Eight'],
+            MCA : ['one','two','three','four','five','six','seven','eight'],
+            MBA : ['first','second','third','forth','fifth','sixth','seventh','eighth'] 
+        };
+        
+        el_parent = document.getElementById("parent_select");
+        el_child = document.getElementById("child_select");
+        
+        for (key in mList) {
+            el_parent.innerHTML = el_parent.innerHTML + '<option>'+ key +'</option>';
+        }
+        
+        el_parent.addEventListener('change', function populate_child(e){
+            el_child.innerHTML = '';
+            itm = e.target.value;
+            if(itm in mList){
+                    for (i = 0; i < mList[itm].length; i++) {
+                        el_child.innerHTML = el_child.innerHTML + '<option>'+ mList[itm][i] +'</option>';
+                    }
+            }
+        });
+        
+        </script>
+        <script language="javascript" type="text/javascript">  
+            var mList2 = {
+                First : ['MATH','BEE','ENG','BCE','CHE'],
+                Second :  ['MATH', 'PSUPC', 'BE','BME','EM','PHY'],
+                Third: ['MATH','OOPSJ','DSA','DLD','ECO'],
+                Forth: ['DMS','DSP','OB','DAA','DC','COA'],
+                Fifth :  ['DBMS', 'FLAT', 'OS', 'OOAD', 'AIML'],
+                Five :  ['DCS', 'WWE', 'GE', 'SA', 'RAE']
+            };
+            
+            e2_parent = document.getElementById("child_select");
+            e2_child = document.getElementById("child2_select");
+            
+            for (key in mList2) {
+                e2_parent.innerHTML = e2_parent.innerHTML + '<option>'+ key +'</option>';
+            }
+            
+            e2_parent.addEventListener('change', function populate_child(e){
+                e2_child.innerHTML = '';
+                itm = e.target.value;
+                if(itm in mList2){
+                        for (i = 0; i < mList2[itm].length; i++) {
+                            e2_child.innerHTML = e2_child.innerHTML + '<option>'+ mList2[itm][i] +'</option>';
+                        }
+                }
+            });
+            
+            </script>
+</body>
+</html>
